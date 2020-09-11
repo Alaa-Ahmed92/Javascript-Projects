@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock With Changing Background</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .clock-parent {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .clock-inner {
+        background: #fff;
+        color: #333;
+        font-family: sans-serif;
+        display: inline-block;
+        padding: 40px;
+        border-radius: 10px;
+        font-size: 50px;
+        text-align: center;
+      }
+      .clock-inner h4 {
+        margin: 0;
+        font-weight: 500;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="clock-parent">
+      <div class="clock-inner">
+        <h4>Clock With Changing Background</h4>
+        <div id="clock"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
