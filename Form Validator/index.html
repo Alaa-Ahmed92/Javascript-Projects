@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #F1F5F8;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .input-box {
+            margin-bottom: 20px;
+        }
+
+        .input-label label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .input-label input,
+        .input-label select {
+            width: 80%;
+            display: block;
+            height: calc(1.5em + .75rem + 2px);
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            outline: none;
+        }
+
+        .input-label select {
+            min-height: 52px;
+        }
+
+        input {
+            padding: 10px;
+        }
+
+        .err {
+            color: red;
+            font-size: 14px;
+            margin-top: 7px;
+        }
+
+        .contactForm {
+            box-shadow: 0 5px 10px rgba(0, 9, 128, 0.035), 0 7px 18px rgba(0, 9, 128, 0.05);
+            background: #fff;
+            width: 25%;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .mrb-10 {
+            margin-bottom: 10px;
+            display: block;
+            font-weight: 600;
+        }
+
+        input[type="submit"] {
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: .25rem;
+            border: none;
+            background: #003aff;
+            color: #fff;
+            outline: none;
+            padding: 14px 36px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="contactForm" name="contactForm" method="post" onsubmit="return validateForm()">
+        <div class="input-box input-label">
+            <label>Full Name</label>
+            <input type="text" name="name" placeholder="Enter your name" />
+            <div class="err" id="errName"></div>
+        </div>
+        <div class="input-box input-label">
+            <label>E-Mail Address</label>
+            <input type="email" name="email" placeholder="Enter your email" />
+            <div class="err" id="errEmail"></div>
+        </div>
+        <div class="input-box input-label">
+            <label>Mobile Number</label>
+            <input type="text" name="mobile" placeholder="Enter your mobile number" />
+            <div class="err" id="errMobile"></div>
+        </div>
+        <div class="input-box input-label">
+            <label>Country</label>
+            <select name="country">
+                <option>Select</option>
+                <option>Australia</option>
+                <option>India</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+            </select>
+            <div class="err" id="errCountry"></div>
+        </div>
+        <div class="input-box">
+            <label class="mrb-10">Gender</label>
+            <div class="form-inline">
+                <label><input type="radio" name="gender" value="Male" /> Male</label>
+                <label><input type="radio" name="gender" value="Female" /> Female</label>
+            </div>
+            <div class="err" id="errGender"></div>
+        </div>
+        <div class="input-box">
+            <label class="mrb-10">Hobbies</label>
+            <div class="form-inline">
+                <label><input type="checkbox" name="hobbies[]" value="Sports">
+                    Sports</label>
+                <label><input type="checkbox" name="hobbies[]" value="Movies">
+                    Movies</label>
+                <label><input type="checkbox" name="hobbies[]" value="Music">
+                    Music</label>
+            </div>
+            <div class="err" id="errHobbies"></div>
+        </div>
+        <div class="input-box">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
